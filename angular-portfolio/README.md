@@ -142,7 +142,7 @@ The portfolio is fully responsive with breakpoints for:
 
 ### Colors
 The color scheme uses a modern dark theme with cyan accents:
-- **Primary**: `#00ffff` (Cyan)
+- **Primary**: `#ffd700` (Cyan)
 - **Secondary**: `#0080ff` (Blue)
 - **Background**: `#0c0c0c` to `#1a1a1a` (Dark gradient)
 - **Text**: `#e0e0e0` (Light gray)
