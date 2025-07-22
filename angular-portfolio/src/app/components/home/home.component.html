@@ -1,0 +1,56 @@
+
+<div class="hero">
+  <div class="hero-background">
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="hero-content">
+      <div class="intro-text">
+        <h2 class="greeting">Hello, I'm</h2>
+        <h1 class="name">Amarnath</h1>
+        <div class="typing-container">
+          <span class="typing-text">{{ displayText }}</span>
+          <span class="cursor" [class.blink]="isTypingComplete">|</span>
+        </div>
+        <p class="description">
+          Passionate about creating innovative solutions with modern technologies. 
+          Specializing in full-stack development with .NET, Angular, and cloud technologies.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn-primary" (click)="scrollToSection('contact')">
+            <i class="fas fa-envelope"></i>
+            Get In Touch
+          </button>
+          <button class="btn-secondary" (click)="scrollToSection('skills')">
+            <i class="fas fa-code"></i>
+            View My Skills
+          </button>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="profile-card">
+          <div class="card-glow"></div>
+          <div class="tech-icons">
+            <i class="fab fa-angular tech-icon angular"></i>
+            <i class="fab fa-microsoft tech-icon dotnet"></i>
+            <i class="fab fa-js-square tech-icon js"></i>
+            <i class="fab fa-aws tech-icon aws"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="scroll-indicator">
+    <div class="scroll-arrow">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </div>
+</div>

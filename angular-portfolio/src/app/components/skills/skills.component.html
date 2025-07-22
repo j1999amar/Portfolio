@@ -1,0 +1,59 @@
+
+<div class="skills-section">
+  <div class="container">
+    <h2 class="section-title">Technical Skills</h2>
+    
+    <div class="category-filters">
+      <button 
+        *ngFor="let category of categories" 
+        class="filter-btn"
+        [class.active]="selectedCategory === category"
+        (click)="filterSkills(category)">
+        {{ category }}
+      </button>
+    </div>
+    
+    <div class="skills-grid">
+      <div 
+        class="skill-card" 
+        *ngFor="let skill of filteredSkills; trackBy: trackBySkill"
+        [style.--skill-color]="skill.color">
+        
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="skill-icon">
+              <i [class]="skill.icon"></i>
+            </div>
+            <h3 class="skill-name">{{ skill.name }}</h3>
+            <div class="skill-category">{{ skill.category }}</div>
+          </div>
+          
+          <div class="card-back">
+            <div class="skill-level">
+              <div class="level-text">{{ skill.level }}%</div>
+              <div class="level-bar">
+                <div class="level-fill" [style.width.%]="skill.level"></div>
+              </div>
+            </div>
+            <div class="skill-description">
+              Proficiency Level
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-glow"></div>
+      </div>
+    </div>
+    
+    <div class="skills-summary">
+      <div class="summary-item">
+        <h4>{{ filteredSkills.length }}</h4>
+        <p>Technologies</p>
+      </div>
+      <div class="summary-item">
+        <h4>2+</h4>
+        <p>Years Experience</p>
+      </div>
+    </div>
+  </div>
+</div>

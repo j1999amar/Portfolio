@@ -1,0 +1,16 @@
+
+<nav class="navbar">
+  <a href="#home" (click)="scrollToSection('home', $event)">Home</a>
+  <a href="#skills" (click)="scrollToSection('skills', $event)">Skills</a>
+  <a href="#contact" (click)="scrollToSection('contact', $event)">Contact</a>
+</nav>
+
+<section id="home">
+  <app-home></app-home>
+</section>
+<section id="skills">
+  <app-skills></app-skills>
+</section>
+<section id="contact">
+  <app-contact></app-contact>
+</section>

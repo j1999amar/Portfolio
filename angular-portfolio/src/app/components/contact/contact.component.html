@@ -1,0 +1,138 @@
+
+<div class="contact-section">
+  <div class="container">
+    <h2 class="section-title">Get In Touch</h2>
+    
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="info-details">
+            <h3>Let's Connect</h3>
+            <p>I'm always interested in new opportunities and interesting projects. Let's discuss how we can work together!</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="info-details">
+            <h3>Email</h3>
+            <p>j1999amar&#64;gmail.com</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div class="info-details">
+            <h3>Response Time</h3>
+            <p>Usually within 24 hours</p>
+          </div>
+        </div>
+        
+        <div class="social-links">
+          <h3>Follow Me</h3>
+          <div class="social-icons">
+            <a 
+              *ngFor="let social of socialLinks" 
+              [href]="social.url" 
+              target="_blank" 
+              class="social-icon"
+              [title]="social.name">
+              <i [class]="social.icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form-container">
+        <form (ngSubmit)="submitForm()" class="contact-form" #contactFormRef="ngForm">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input 
+              type="text" 
+              id="name"
+              placeholder="Enter your full name" 
+              [(ngModel)]="contactForm.name" 
+              name="name" 
+              required 
+              #nameInput="ngModel"
+              class="form-input"
+              [class.error]="nameInput.invalid && nameInput.touched">
+            <div class="input-underline"></div>
+            <div class="error-message" *ngIf="nameInput.invalid && nameInput.touched">
+              Name is required
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input 
+              type="tel" 
+              id="phone"
+              placeholder="Enter your phone number" 
+              [(ngModel)]="contactForm.phone" 
+              name="phone" 
+              required 
+              #phoneInput="ngModel"
+              class="form-input"
+              [class.error]="phoneInput.invalid && phoneInput.touched">
+            <div class="input-underline"></div>
+            <div class="error-message" *ngIf="phoneInput.invalid && phoneInput.touched">
+              Phone number is required
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="comments">Message *</label>
+            <textarea 
+              id="comments"
+              placeholder="Tell me about your project or just say hello!" 
+              [(ngModel)]="contactForm.comments" 
+              name="comments" 
+              required 
+              #commentsInput="ngModel"
+              class="form-textarea"
+              [class.error]="commentsInput.invalid && commentsInput.touched"
+              rows="5"></textarea>
+            <div class="input-underline"></div>
+            <div class="error-message" *ngIf="commentsInput.invalid && commentsInput.touched">
+              Message is required
+            </div>
+          </div>
+          
+          <button 
+            type="submit" 
+            class="submit-btn"
+            [disabled]="!isFormValid() || isSubmitting"
+            [class.loading]="isSubmitting"
+            [class.success]="isSubmitted">
+            <span *ngIf="!isSubmitting && !isSubmitted">
+              <i class="fas fa-paper-plane"></i>
+              Send Message
+            </span>
+            <span *ngIf="isSubmitting">
+              <i class="fas fa-spinner fa-spin"></i>
+              Sending...
+            </span>
+            <span *ngIf="isSubmitted">
+              <i class="fas fa-check"></i>
+              Message Sent!
+            </span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <div class="contact-background">
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+  </div>
+</div>
